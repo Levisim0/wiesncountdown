@@ -14,7 +14,7 @@ root.resizable(False, False)
 root.attributes("-topmost", True)
 
 window_width = 320
-window_height = 120
+window_height = 140
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
@@ -25,12 +25,14 @@ y = (screen_height // 2) - (window_height // 2)
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
 if days_left > 0:
-    message = f"🍺 Noch {days_left} Tage bis zur Wiesn '26!"
-    message = f"Noch {fr_days_left} Tage bis zum Frühlingsfest '26"
+    message = (
+        f"🌸 Noch {fr_days_left} Tage bis zum Frühlingsfest '26\n"
+        f"🍺 Noch {days_left} Tage bis zur Wiesn '26!"
+    )
 else:
     message = "🎉 Wiesn-Zeit! 🍺 O'zapft is!"
 
-label = tk.Label(root, text=message, font=("Arial", 12))
+label = tk.Label(root, text=message, font=("Arial", 12), justify="center")
 label.pack(pady=20)
 
 ok_button = tk.Button(root, text="OK", width=10, command=root.destroy)
