@@ -1,10 +1,12 @@
 import tkinter as tk
 from datetime import datetime
 
-oktoberfest_date = datetime(2025, 9, 20)
+oktoberfest_date = datetime(2026, 9, 19)
+fruehlingsfest_date = datetime(2026, 4, 17)
 
 today = datetime.now()
 days_left = (oktoberfest_date - today).days
+fr_days_left = (fruehlingsfest_date - today).days
 
 root = tk.Tk()
 root.title("Oktoberfest Countdown")
@@ -23,7 +25,8 @@ y = (screen_height // 2) - (window_height // 2)
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
 if days_left > 0:
-    message = f"🍺 Noch {days_left} Tage bis zur Wiesn!"
+    message = f"🍺 Noch {days_left} Tage bis zur Wiesn '26!"
+    message = f"Noch {fr_days_left} Tage bis zum Frühlingsfest '26"
 else:
     message = "🎉 Wiesn-Zeit! 🍺 O'zapft is!"
 
